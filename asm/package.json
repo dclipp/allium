@@ -10,7 +10,7 @@
     "src:update:message-strings": "node resources/message-strings-object-generator.js"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MPL-2.0",
   "dependencies": {
     "@allium/types": "file:../types",
     "@types/node": "^13.1.4"

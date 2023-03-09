@@ -9,7 +9,7 @@
     "build": "tsc"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MPL-2.0",
   "dependencies": {
     "@allium/arch": "file:../arch",
     "@allium/types": "file:../types"
