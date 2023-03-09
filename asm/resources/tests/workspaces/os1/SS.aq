@@ -1,0 +1,24 @@
+'System Shell
+?import constants=VSysConstants
+?import io_manager=VSysIoManager
+?import stack_manager=VSysStackManager
+?import SYS_RETURN_ADDRESS = constants:SYS_RETURN_ADDRESS
+
+'Invoke
+Invoke:
+LOAD_MONDAY 0
+JMPI $io_manager:STDIOHasData
+LOAD_TUESDAY $ParseInput_Begin
+JNZ [TUESDAY] [MONDAY]
+JMPI SYS_RETURN_ADDRESS
+
+'Parse input
+ParseInput_Begin:
+LOAD_MONDAY $ParseInput_AfterRead
+LOAD_TUESDAY $io_manager:STDIORead
+JMPI $stack_manager:PushReturnAddress
+
+'After read
+ParseInput_AfterRead:
+NO_OP
+'TODO

@@ -1,0 +1,3 @@
+?import init_io_manager=VSysIoManager:Initialize
+Main:
+JMPI init_io_manager

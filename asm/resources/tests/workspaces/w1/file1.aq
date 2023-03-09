@@ -1,0 +1,5 @@
+ADD [MONDAY]
+SUB 500
+'comment
+DIV [FRIDAY] [TUESDAY]
+kNO_OP

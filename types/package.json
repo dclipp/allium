@@ -1,0 +1,13 @@
+{
+  "name": "@allium/types",
+  "version": "0.4.0",
+  "description": "",
+  "module": "@allium/types",
+  "main": "./lib/exports.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "author": "",
+  "license": "ISC"
+}

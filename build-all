@@ -1,0 +1,5 @@
+pushd types && npm i && npm run build && popd
+pushd io-bus && npm i && npm run build && popd
+pushd arch && npm i && npm run build && popd
+pushd emulator && npm i && npm run build && popd
+pushd asm && npm i && npm run build && popd

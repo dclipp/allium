@@ -1,0 +1,50 @@
+//no mask, perfect whitespace
+[MONDAY]
+//no mask, leading whitespace
+[~sMONDAY]
+//no mask, trailing whitespace
+[MONDAY~s]
+//no mask, perfect whitespace, missing opening and closing
+MONDAY
+//no mask, perfect whitespace, missing opening
+MONDAY]
+//no mask, leading whitespace, missing closing
+[MONDAY
+//no mask, trailing whitespace, missing opening and closing
+MONDAY~s
+//with mask, perfect whitespace
+[MONDAY.hh]
+//with mask, leading opening whitespace
+[~sMONDAY.hh]
+//with mask, trailing opening whitespace
+[MONDAY.hh~s]
+//with mask, perfect opening whitespace, missing opening
+MONDAY.hh]
+//with mask, leading opening whitespace, missing closing
+[~sMONDAY.hh
+//with mask, trailing opening whitespace, missing opening and closing
+MONDAY.hh~s
+//with mask, pre-dot whitespace
+[MONDAY~s.hh]
+//with mask, perfect pre-dot whitespace, missing opening
+MONDAY.hh]
+//with mask, pre-dot whitespace, missing closing
+[MONDAY~s.hh
+//with mask, pre-dot whitespace, missing opening and closing
+MONDAY~s.hh
+//with mask, post-dot whitespace
+[MONDAY.~shh]
+//with mask, perfect post-dot whitespace, missing opening
+MONDAY.hh]
+//with mask, post-dot whitespace, missing closing
+[MONDAY.~shh
+//with mask, post-dot whitespace, missing opening and closing
+MONDAY.~shh
+//with mask, surrounding-dot whitespace
+[MONDAY~s.~shh]
+//with mask, surrounding-dot whitespace, missing opening
+MONDAY~s.~shh]
+//with mask, surrounding-dot whitespace, missing closing
+[MONDAY~s.~shh
+//with mask, surrounding-dot whitespace, missing opening and closing
+MONDAY~s.~shh

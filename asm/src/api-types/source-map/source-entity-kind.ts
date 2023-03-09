@@ -1,0 +1,1 @@
+export type SourceEntityKind = 'space-sequence' | 'tab-sequence' | 'punctuation' | 'language-construct' | 'newline' | 'comment' | 'garbage';

@@ -1,0 +1,1 @@
+export type ByteValue = number;//TODO ?? % 255;

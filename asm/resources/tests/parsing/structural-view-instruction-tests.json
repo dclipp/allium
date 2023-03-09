@@ -1,0 +1,568 @@
+[
+    {
+        "testDescription": "Single op with 1 inline arg",
+        "input": {
+            "allTokens": [
+                {
+                    "index": 0,
+                    "startPosition": 0,
+                    "endPosition": 11,
+                    "length": 11,
+                    "text": "LOAD_MONDAY"
+                },
+                {
+                    "index": 1,
+                    "startPosition": 12,
+                    "endPosition": 13,
+                    "length": 1,
+                    "text": "1"
+                }
+            ],
+            "mnemonicTokenIndex": 0,
+            "lastTokenIndexInLine": 1
+        },
+        "expectedMessages": [],
+        "expectedView": [
+            {
+                "tokenIndices": [1],
+                "assumedArgKind": 2
+            }
+        ]
+    },
+    {
+        "testDescription": "Single op with 1 inline arg, hex",
+        "input": {
+            "allTokens": [
+                {
+                    "index": 0,
+                    "startPosition": 0,
+                    "endPosition": 11,
+                    "length": 11,
+                    "text": "LOAD_MONDAY"
+                },
+                {
+                    "index": 1,
+                    "startPosition": 12,
+                    "endPosition": 15,
+                    "length": 3,
+                    "text": "xFA"
+                }
+            ],
+            "mnemonicTokenIndex": 0,
+            "lastTokenIndexInLine": 1
+        },
+        "expectedMessages": [],
+        "expectedView": [
+            {
+                "tokenIndices": [1],
+                "assumedArgKind": 2
+            }
+        ]
+    },
+    {
+        "testDescription": "Single op with 1 inline arg, hex missing prefix",
+        "input": {
+            "allTokens": [
+                {
+                    "index": 0,
+                    "startPosition": 0,
+                    "endPosition": 11,
+                    "length": 11,
+                    "text": "LOAD_MONDAY"
+                },
+                {
+                    "index": 1,
+                    "startPosition": 12,
+                    "endPosition": 14,
+                    "length": 2,
+                    "text": "FA"
+                }
+            ],
+            "mnemonicTokenIndex": 0,
+            "lastTokenIndexInLine": 1
+        },
+        "expectedMessages": ["StructuralView.InlineValueMissingHexPrefix.12.14"],
+        "expectedView": [
+            {
+                "tokenIndices": [1],
+                "assumedArgKind": 2
+            }
+        ]
+    },
+    {
+        "testDescription": "Single op with 1 register arg",
+        "input": {
+            "allTokens": [
+                {
+                    "index": 0,
+                    "startPosition": 0,
+                    "endPosition": 3,
+                    "length": 3,
+                    "text": "ADD"
+                },
+                {
+                    "index": 1,
+                    "startPosition": 4,
+                    "endPosition": 12,
+                    "length": 8,
+                    "text": "[MONDAY]"
+                }
+            ],
+            "mnemonicTokenIndex": 0,
+            "lastTokenIndexInLine": 1
+        },
+        "expectedMessages": [],
+        "expectedView": [
+            {
+                "tokenIndices": [1],
+                "assumedArgKind": 1
+            }
+        ]
+    },
+    {
+        "testDescription": "Single op with 1 register arg, missing closing bracket",
+        "input": {
+            "allTokens": [
+                {
+                    "index": 0,
+                    "startPosition": 0,
+                    "endPosition": 3,
+                    "length": 3,
+                    "text": "ADD"
+                },
+                {
+                    "index": 1,
+                    "startPosition": 4,
+                    "endPosition": 11,
+                    "length": 7,
+                    "text": "[MONDAY"
+                }
+            ],
+            "mnemonicTokenIndex": 0,
+            "lastTokenIndexInLine": 1
+        },
+        "expectedMessages": ["StructuralView.UnterminatedRegisterRef.4.11"],
+        "expectedView": [
+            {
+                "tokenIndices": [1],
+                "assumedArgKind": 1
+            }
+        ]
+    },
+    {
+        "testDescription": "Single op with 1 register arg, missing opening bracket",
+        "input": {
+            "allTokens": [
+                {
+                    "index": 0,
+                    "startPosition": 0,
+                    "endPosition": 3,
+                    "length": 3,
+                    "text": "ADD"
+                },
+                {
+                    "index": 1,
+                    "startPosition": 4,
+                    "endPosition": 11,
+                    "length": 7,
+                    "text": "MONDAY]"
+                }
+            ],
+            "mnemonicTokenIndex": 0,
+            "lastTokenIndexInLine": 1
+        },
+        "expectedMessages": ["StructuralView.UnopenedRegisterRef.4.11"],
+        "expectedView": [
+            {
+                "tokenIndices": [1],
+                "assumedArgKind": 1
+            }
+        ]
+    },
+    {
+        "testDescription": "Single op with 1 register arg, gap after opening bracket",
+        "input": {
+            "allTokens": [
+                {
+                    "index": 0,
+                    "startPosition": 0,
+                    "endPosition": 3,
+                    "length": 3,
+                    "text": "ADD"
+                },
+                {
+                    "index": 1,
+                    "startPosition": 4,
+                    "endPosition": 5,
+                    "length": 1,
+                    "text": "["
+                },
+                {
+                    "index": 2,
+                    "startPosition": 6,
+                    "endPosition": 13,
+                    "length": 7,
+                    "text": "MONDAY]"
+                }
+            ],
+            "mnemonicTokenIndex": 0,
+            "lastTokenIndexInLine": 2
+        },
+        "expectedMessages": [],
+        "expectedView": [
+            {
+                "tokenIndices": [1, 2],
+                "assumedArgKind": 1
+            }
+        ]
+    },
+    {
+        "testDescription": "Single op with 1 register arg, gap before closing bracket",
+        "input": {
+            "allTokens": [
+                {
+                    "index": 0,
+                    "startPosition": 0,
+                    "endPosition": 3,
+                    "length": 3,
+                    "text": "ADD"
+                },
+                {
+                    "index": 1,
+                    "startPosition": 4,
+                    "endPosition": 11,
+                    "length": 7,
+                    "text": "[MONDAY"
+                },
+                {
+                    "index": 2,
+                    "startPosition": 12,
+                    "endPosition": 13,
+                    "length": 1,
+                    "text": "]"
+                }
+            ],
+            "mnemonicTokenIndex": 0,
+            "lastTokenIndexInLine": 2
+        },
+        "expectedMessages": [],
+        "expectedView": [
+            {
+                "tokenIndices": [1, 2],
+                "assumedArgKind": 1
+            }
+        ]
+    },
+    {
+        "testDescription": "Single op with 1 auto mem ref arg",
+        "input": {
+            "allTokens": [
+                {
+                    "index": 0,
+                    "startPosition": 0,
+                    "endPosition": 11,
+                    "length": 11,
+                    "text": "LOAD_MONDAY"
+                },
+                {
+                    "index": 1,
+                    "startPosition": 12,
+                    "endPosition": 15,
+                    "length": 3,
+                    "text": "#20"
+                }
+            ],
+            "mnemonicTokenIndex": 0,
+            "lastTokenIndexInLine": 1
+        },
+        "expectedMessages": [],
+        "expectedView": [
+            {
+                "tokenIndices": [1],
+                "assumedArgKind": 3
+            }
+        ]
+    },
+    {
+        "testDescription": "Single op with 1 auto mem ref arg, gap after #",
+        "input": {
+            "allTokens": [
+                {
+                    "index": 0,
+                    "startPosition": 0,
+                    "endPosition": 11,
+                    "length": 11,
+                    "text": "LOAD_MONDAY"
+                },
+                {
+                    "index": 1,
+                    "startPosition": 12,
+                    "endPosition": 13,
+                    "length": 1,
+                    "text": "#"
+                },
+                {
+                    "index": 2,
+                    "startPosition": 14,
+                    "endPosition": 16,
+                    "length": 2,
+                    "text": "20"
+                }
+            ],
+            "mnemonicTokenIndex": 0,
+            "lastTokenIndexInLine": 2
+        },
+        "expectedMessages": [],
+        "expectedView": [
+            {
+                "tokenIndices": [1, 2],
+                "assumedArgKind": 3
+            }
+        ]
+    },
+    {
+        "testDescription": "Single op with 1 auto label ref arg",
+        "input": {
+            "allTokens": [
+                {
+                    "index": 0,
+                    "startPosition": 0,
+                    "endPosition": 4,
+                    "length": 4,
+                    "text": "JMPI"
+                },
+                {
+                    "index": 1,
+                    "startPosition": 5,
+                    "endPosition": 11,
+                    "length": 6,
+                    "text": "$other"
+                }
+            ],
+            "mnemonicTokenIndex": 0,
+            "lastTokenIndexInLine": 1
+        },
+        "expectedMessages": [],
+        "expectedView": [
+            {
+                "tokenIndices": [1],
+                "assumedArgKind": 4
+            }
+        ]
+    },
+    {
+        "testDescription": "Single op with 1 auto label ref arg, gap after $",
+        "input": {
+            "allTokens": [
+                {
+                    "index": 0,
+                    "startPosition": 0,
+                    "endPosition": 4,
+                    "length": 4,
+                    "text": "JMPI"
+                },
+                {
+                    "index": 1,
+                    "startPosition": 5,
+                    "endPosition": 6,
+                    "length": 1,
+                    "text": "$"
+                },
+                {
+                    "index": 2,
+                    "startPosition": 7,
+                    "endPosition": 12,
+                    "length": 5,
+                    "text": "other"
+                }
+            ],
+            "mnemonicTokenIndex": 0,
+            "lastTokenIndexInLine": 2
+        },
+        "expectedMessages": [],
+        "expectedView": [
+            {
+                "tokenIndices": [1, 2],
+                "assumedArgKind": 4
+            }
+        ]
+    },
+    {
+        "testDescription": "Single op with 1 auto label ref arg, double '$' signs",
+        "input": {
+            "allTokens": [
+                {
+                    "index": 0,
+                    "startPosition": 0,
+                    "endPosition": 4,
+                    "length": 4,
+                    "text": "JMPI"
+                },
+                {
+                    "index": 1,
+                    "startPosition": 5,
+                    "endPosition": 6,
+                    "length": 1,
+                    "text": "$"
+                },
+                {
+                    "index": 2,
+                    "startPosition": 7,
+                    "endPosition": 8,
+                    "length": 1,
+                    "text": "$"
+                },
+                {
+                    "index": 3,
+                    "startPosition": 9,
+                    "endPosition": 14,
+                    "length": 5,
+                    "text": "other"
+                }
+            ],
+            "mnemonicTokenIndex": 0,
+            "lastTokenIndexInLine": 3
+        },
+        "expectedMessages": ["StructuralView.InvalidAutoLabelRef.5.14"],
+        "expectedView": [
+            {
+                "tokenIndices": [1, 2, 3],
+                "assumedArgKind": 4
+            }
+        ]
+    },
+    {
+        "testDescription": "Single op with 1 auto label ref arg, missing label name",
+        "input": {
+            "allTokens": [
+                {
+                    "index": 0,
+                    "startPosition": 0,
+                    "endPosition": 4,
+                    "length": 4,
+                    "text": "JMPI"
+                },
+                {
+                    "index": 1,
+                    "startPosition": 5,
+                    "endPosition": 6,
+                    "length": 1,
+                    "text": "$"
+                }
+            ],
+            "mnemonicTokenIndex": 0,
+            "lastTokenIndexInLine": 1
+        },
+        "expectedMessages": ["StructuralView.AutoLabelRefMissingLabel.5.6"],
+        "expectedView": [
+            {
+                "tokenIndices": [1],
+                "assumedArgKind": 4
+            }
+        ]
+    },
+    {
+        "testDescription": "Single op with 1 auto label ref arg, invalid chars after $",
+        "input": {
+            "allTokens": [
+                {
+                    "index": 0,
+                    "startPosition": 0,
+                    "endPosition": 4,
+                    "length": 4,
+                    "text": "JMPI"
+                },
+                {
+                    "index": 1,
+                    "startPosition": 5,
+                    "endPosition": 8,
+                    "length": 3,
+                    "text": "$%%"
+                }
+            ],
+            "mnemonicTokenIndex": 0,
+            "lastTokenIndexInLine": 1
+        },
+        "expectedMessages": ["StructuralView.InvalidAutoLabelRef.5.8"],
+        "expectedView": [
+            {
+                "tokenIndices": [1],
+                "assumedArgKind": 4
+            }
+        ]
+    },
+    {
+        "testDescription": "Single op with 1 auto label ref arg, gap after $ followed by invalid chars",
+        "input": {
+            "allTokens": [
+                {
+                    "index": 0,
+                    "startPosition": 0,
+                    "endPosition": 4,
+                    "length": 4,
+                    "text": "JMPI"
+                },
+                {
+                    "index": 1,
+                    "startPosition": 5,
+                    "endPosition": 6,
+                    "length": 1,
+                    "text": "$"
+                },
+                {
+                    "index": 2,
+                    "startPosition": 8,
+                    "endPosition": 10,
+                    "length": 2,
+                    "text": "%%"
+                }
+            ],
+            "mnemonicTokenIndex": 0,
+            "lastTokenIndexInLine": 2
+        },
+        "expectedMessages": ["StructuralView.InvalidAutoLabelRef.5.10"],
+        "expectedView": [
+            {
+                "tokenIndices": [1, 2],
+                "assumedArgKind": 4
+            }
+        ]
+    },
+    {
+        "testDescription": "Single op with 2 auto label ref args",
+        "input": {
+            "allTokens": [
+                {
+                    "index": 0,
+                    "startPosition": 0,
+                    "endPosition": 4,
+                    "length": 4,
+                    "text": "JMPI"
+                },
+                {
+                    "index": 1,
+                    "startPosition": 5,
+                    "endPosition": 11,
+                    "length": 6,
+                    "text": "$other"
+                },
+                {
+                    "index": 2,
+                    "startPosition": 12,
+                    "endPosition": 20,
+                    "length": 8,
+                    "text": "$another"
+                }
+            ],
+            "mnemonicTokenIndex": 0,
+            "lastTokenIndexInLine": 2
+        },
+        "expectedMessages": [],
+        "expectedView": [
+            {
+                "tokenIndices": [1, 2],
+                "assumedArgKind": 4
+            }
+        ]
+    }
+]

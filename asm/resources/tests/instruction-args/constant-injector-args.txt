@@ -1,0 +1,40 @@
+// Valid, no value, perfect whitespace
+@Macro
+// Valid, no value, whitespace after at sign
+@~sMacro
+// Valid, with value, perfect whitespace
+@FLAG=OVERFLOW
+// Valid, with value, whitespace after at sign
+@~sFLAG=OVERFLOW
+// Valid, with value, whitespace before equals sign
+@FLAG~s=OVERFLOW
+// Valid, with value, whitespace after equals sign
+@FLAG=~sOVERFLOW
+// Valid, with value, whitespace surrounding equals sign
+@FLAG~s=~sOVERFLOW
+// Valid, with value, whitespace after at sign and before equals sign
+@~sFLAG~s=OVERFLOW
+// Valid, with value, whitespace after at sign and after equals sign
+@~sFLAG=~sOVERFLOW
+// Valid, with value, whitespace after at sign and surrounding equals sign
+@~sFLAG~s=~sOVERFLOW
+// Missing value, perfect whitespace
+@FLAG=
+// Missing value, whitespace after at sign
+@~sFLAG=
+// Missing value, whitespace before equals sign
+@FLAG~s=
+// Missing value, whitespace after at sign and before equals sign
+@~sFLAG~s=
+// Missing key, perfect whitespace
+@=OVERFLOW
+// Missing key, whitespace after at sign
+@~s=OVERFLOW
+// Missing key, whitespace after equals sign
+@=~sOVERFLOW
+// Missing key, whitespace surrounding equals sign
+@~s=~sOVERFLOW
+// Invalid characters, perfect whitespace
+@^^7yh*
+// Invalid characters, whitespace after at sign
+@~s^^7yh*

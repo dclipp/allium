@@ -1,0 +1,9 @@
+{
+    "assemblyName": "w2",
+    "sourceImports": [
+        {
+            "referenceName": "F1",
+            "filePath": "/file1.aq"
+        }
+    ]
+}

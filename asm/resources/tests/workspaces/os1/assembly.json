@@ -1,0 +1,25 @@
+{
+    "assemblyName": "os1",
+    "sourceImports": [
+        {
+            "referenceName": "VSysConstants",
+            "filePath": "/VSYSCONSTANTS.aq"
+        },
+        {
+            "referenceName": "SS",
+            "filePath": "/SS.aq"
+        },
+        {
+            "referenceName": "VSysIoManager",
+            "filePath": "/VSYSIOMANAGER.aq"
+        },
+        {
+            "referenceName": "VSysStackManager",
+            "filePath": "/VSYSSTACKMANAGER.aq"
+        },
+        {
+            "referenceName": "Boot",
+            "filePath": "/BOOT.aq"
+        }
+    ]
+}

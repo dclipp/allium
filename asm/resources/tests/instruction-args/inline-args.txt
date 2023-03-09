@@ -1,0 +1,8 @@
+//Valid, base 10
+528
+//Valid, hex lowercase
+xfe
+//Valid, hex uppercase
+X1CB9
+//Missing hex prefix
+fff

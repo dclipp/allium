@@ -1,0 +1,17 @@
+{
+  "name": "@allium/emulator",
+  "version": "0.4.0",
+  "description": "",
+  "module": "@allium/emulator",
+  "main": "./lib/exports.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@allium/arch": "file:../arch",
+    "@allium/types": "file:../types"
+  }
+}

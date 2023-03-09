@@ -1,0 +1,177 @@
+[
+    {
+        "testDescription": "single line, 1 token",
+        "input": "FLAG_ACK",
+        "expectedMessages": [],
+        "expectedView": {
+            "tokens": [
+                {
+                    "index": 0,
+                    "startPosition": 0,
+                    "endPosition": 8,
+                    "length": 8,
+                    "text": "FLAG_ACK"
+                }
+            ]
+        }
+    },
+    {
+        "testDescription": "single line, 2 tokens",
+        "input": "JMPI $block01",
+        "expectedMessages": [],
+        "expectedView": {
+            "tokens": [
+                {
+                    "index": 0,
+                    "startPosition": 0,
+                    "endPosition": 4,
+                    "length": 4,
+                    "text": "JMPI"
+                },
+                {
+                    "index": 1,
+                    "startPosition": 5,
+                    "endPosition": 13,
+                    "length": 8,
+                    "text": "$block01"
+                }
+            ]
+        }
+    },
+    {
+        "testDescription": "empty string",
+        "input": "~!EMPTY",
+        "expectedMessages": ["OriginView.NullOrEmptyContent"],
+        "expectedView": {
+            "tokens": []
+        }
+    },
+    {
+        "testDescription": "single line, 2 tokens leading space",
+        "input": "~sJMPI $block01",
+        "expectedMessages": [],
+        "expectedView": {
+            "tokens": [
+                {
+                    "index": 0,
+                    "startPosition": 1,
+                    "endPosition": 5,
+                    "length": 4,
+                    "text": "JMPI"
+                },
+                {
+                    "index": 1,
+                    "startPosition": 6,
+                    "endPosition": 14,
+                    "length": 8,
+                    "text": "$block01"
+                }
+            ]
+        }
+    },
+    {
+        "testDescription": "single line, 1 token leading tabs",
+        "input": "~t~tNO_OP",
+        "expectedMessages": [],
+        "expectedView": {
+            "tokens": [
+                {
+                    "index": 0,
+                    "startPosition": 2,
+                    "endPosition": 7,
+                    "length": 5,
+                    "text": "NO_OP"
+                }
+            ]
+        }
+    },
+    {
+        "testDescription": "multi-line",
+        "input": "JMPI $block01~nADD ~s~t[MONDAY]~nDIV [TUESDAY.hh]~n",
+        "expectedMessages": [],
+        "expectedView": {
+            "tokens": [
+                {
+                    "index": 0,
+                    "startPosition": 0,
+                    "endPosition": 4,
+                    "length": 4,
+                    "text": "JMPI"
+                },
+                {
+                    "index": 1,
+                    "startPosition": 5,
+                    "endPosition": 13,
+                    "length": 8,
+                    "text": "$block01"
+                },
+                {
+                    "index": 2,
+                    "startPosition": 14,
+                    "endPosition": 17,
+                    "length": 3,
+                    "text": "ADD"
+                },
+                {
+                    "index": 3,
+                    "startPosition": 20,
+                    "endPosition": 28,
+                    "length": 8,
+                    "text": "[MONDAY]"
+                },
+                {
+                    "index": 4,
+                    "startPosition": 29,
+                    "endPosition": 32,
+                    "length": 3,
+                    "text": "DIV"
+                },
+                {
+                    "index": 5,
+                    "startPosition": 33,
+                    "endPosition": 45,
+                    "length": 12,
+                    "text": "[TUESDAY.hh]"
+                }
+            ]
+        }
+    },
+    {
+        "testDescription": "single line, 3 tokens",
+        "input": "JNZ [FRIDAY]~t[WEDNESDAY]",
+        "expectedMessages": [],
+        "expectedView": {
+            "tokens": [
+                {
+                    "index": 0,
+                    "startPosition": 0,
+                    "endPosition": 3,
+                    "length": 3,
+                    "text": "JNZ"
+                },
+                {
+                    "index": 1,
+                    "startPosition": 4,
+                    "endPosition": 12,
+                    "length": 8,
+                    "text": "[FRIDAY]"
+                },
+                {
+                    "index": 2,
+                    "startPosition": 13,
+                    "endPosition": 24,
+                    "length": 11,
+                    "text": "[WEDNESDAY]"
+                }
+            ]
+        }
+    },
+    {
+        "testDescription": "null string",
+        "input": "~!NULL",
+        "expectedMessages": ["OriginView.NullOrEmptyContent"],
+        "expectedView": {
+            "tokens": []
+        }
+    }
+]

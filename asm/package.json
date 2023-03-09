@@ -1,0 +1,18 @@
+{
+  "name": "@allium/asm",
+  "version": "0.4.0",
+  "description": "",
+  "main": "dist/exports.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "src:update:messages": "node resources/messages-object-generator.js",
+    "src:update:message-strings": "node resources/message-strings-object-generator.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@allium/types": "file:../types",
+    "@types/node": "^13.1.4"
+  }
+}

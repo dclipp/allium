@@ -1,0 +1,8 @@
+//Valid, perfect whitespace
+#103
+//Valid, whitespace after pound sign
+# 103
+//Not a number, perfect whitespace
+#uih
+//Not a number, whitespace after pound sign
+# afsd

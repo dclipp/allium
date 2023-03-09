@@ -1,0 +1,11 @@
+export type NativeDataType = 'none'
+| 'inline-unsigned-number'
+| 'inline-signed-number'
+| 'inline-float-number'
+| 'flag-code'
+| 'memory-address'
+| 'register-name'
+| 'register-mask'
+| 'io-port'
+| 'io-command'
+| 'mnemonic';

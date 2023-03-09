@@ -1,0 +1,32 @@
+//Valid local, perfect whitespace
+$Label01
+//Valid local, whitespace after dollar sign
+$~sLabel01
+//Valid external, perfect whitespace
+$OtherSource:_Label01
+//Valid external, whitespace after dollar sign
+$~sOtherSource:_Label01
+//Valid external, whitespace before colon
+$OtherSource~s:_Label01
+//Valid external, whitespace after colon
+$OtherSource:~s_Label01
+//Valid external, whitespace before colon and after dollar sign
+$~sOtherSource~s:_Label01
+//Valid external, whitespace after colon and after dollar sign
+$~sOtherSource:~s_Label01
+//Valid external, whitespace surrounding colon
+$OtherSource~s:~s_Label01
+//Valid external, whitespace surrounding colon and after dollar sign
+$~sOtherSource~s:~s_Label01
+//Missing label
+$
+
+
+//Missing external target, perfect whitespace
+$Label01:
+//Missing external target, whitespace after dollar sign
+$~sLabel01:
+//Missing external target, whitespace before colon and after dollar sign
+$~sLabel01~s:~s
+//Missing external target, whitespace before colon
+$_Lbl_Abc~s:

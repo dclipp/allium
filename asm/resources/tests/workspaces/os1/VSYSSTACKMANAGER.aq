@@ -1,0 +1,41 @@
+'VSysStackManager
+?import SYS_RETURN_ADDRESS = VSysConstants:SYS_RETURN_ADDRESS
+?alias STACK_BASE_ADDRESS = #2
+?alias MAX_STACK_SIZE = 255
+
+'Push Return Address
+'Inputs:
+'   [MONDAY]
+'       The address to be pushed
+'   [TUESDAY]
+'       The address to return to after pushing
+PushReturnAddress:
+LOAD_ACCUMULATOR SYS_RETURN_ADDRESS
+LOAD_WEDNESDAY 1
+MEMWRITE [ACCUMULATOR] [MONDAY.hh]
+ADD [WEDNESDAY]
+MEMWRITE [ACCUMULATOR] [MONDAY.hl]
+ADD [WEDNESDAY]
+MEMWRITE [ACCUMULATOR] [MONDAY.lh]
+ADD [WEDNESDAY]
+MEMWRITE [ACCUMULATOR] [MONDAY.ll]
+JMP [TUESDAY]
+
+' --> CurrentStackSize (1 byte)
+' --> [Quads]
+
+'Get the current stack size
+'Inputs:
+'   [MONDAY]
+'       The address to return to after this block
+' Returns
+'   [TUESDAY.hh] = stack size
+'   [TUESDAY.hl] = number of available stack frames
+GetStackSize:
+LOAD_TUESDAY STACK_BASE_ADDRESS
+MEMREAD [TUESDAY] [TUESDAY.hh]
+COPY [TUESDAY] [WEDNESDAY]
+LOAD_ACCUMULATOR MAX_STACK_SIZE
+SUB [WEDNESDAY]
+COPY [WEDNESDAY.hh] [TUESDAY.hl]
+JMP [MONDAY]

@@ -1,0 +1,90 @@
+{
+    "Stage1": {
+        "NullOrEmptyContent": "Input source code is null or empty"
+    },
+    "Stage2": {
+        "InvalidMnemonic": "Invalid mnemonic",
+        "UnrecognizedMnemonic": "Unknown mnemonic",
+        "BadMnemonicCasing": "Mnemonics must be uppercase",
+        "MissingMnemonic": "Expected a mnemonic but found none",
+        "InvalidRegisterRef": "Invalid register reference",
+        "UnopenedRegisterRef": "Register reference missing opening bracket ('[')",
+        "UnterminatedRegisterRef": "Register reference missing closing bracket (']')",
+        "RegisterRefMissingBraces": "Register reference missing brackets",
+        "InvalidInlineValue": "InvalidInlineValue",
+        "InlineValueMissingHexPrefix": "Missing hex prefix",
+        "InvalidAutoAddressRef": "InvalidAutoAddressRef",
+        "AutoAddressRefMissingLabel": "AutoAddressRefMissingLabel",
+        "AutoAddressRefMissingExternalTarget": "AutoAddressRefMissingExternalTarget",
+        "InvalidConstantInjector": "Invalid constant injector",
+        "ConstantInjectorMissingKey": "Missing constant injection key",
+        "ConstantInjectorMissingValue": "Missing constant injection value",
+        "InvalidContent": "Invalid content",
+        "UnknownArgument": "Unknown argument",
+        "Directives": {
+            "InvalidDirective": "Invalid directive"
+        },
+        "Blocks": {
+            "BlockProblem": "BlockProblem",
+            "UnlabeledBlock": "Instructions must be encapsulated within a block"
+        }
+    },
+    "Stage3": {
+        "InvalidRegisterReference": "Invalid register reference",
+        "InvalidRegisterName": "Invalid register name",
+        "InvalidNamedRegisterMask": "Invalid named register mask",
+        "InvalidNumericRegisterMask": "Invalid register mask",
+        "InlineValueTooLarge": "Numeric value is too large",
+        "InvalidConstantInjectionKind": "Unknown Constant Injection type",
+        "AutoAddressRefOrdinalTooLarge": "Ordinal memory value is too large",
+        "AliasNotFound": "Specified alias not found",
+        "InvalidInjectionValue": "Invalid constant injection value",
+        "FlagInjectionBadCasing": "Injected flag name must be uppercase",
+        "VectorInjectionMagnitudeTooLarge": "Numeric magnitude of the vector is too large",
+        "AutoAddressRefInvalidOperator": "Invalid positional reference specifier"
+    },
+    "Stage4": {
+        "InvalidAutoAddressRef": "Invalid auto address ref",
+        "AutoAddressRefLabelNotFound": "The specified label was not found.",
+        "AutoAddressRefTooLargeForInline": "The specified label cannot be used at this location because it references a block which is too far away.",
+        "DirectiveNotFound": "Specified directive not found",
+        "ImportError": "Could not parse import",
+        "ExternalObjectNotFound": "The specified external object was not found",
+        "ExternalObjectDoesNotContainLabel": "The specified external object does not contain the given label"
+    },
+    "Stage5": {
+        "InlineValueTooLarge": "Numeric value is too large",
+        "ArgumentsResized": "ArgumentsResized",
+        "UnresolvedTargetBlockAddress": "Unresolvable auto label ref",
+        "NotAnInlineValueMnemonic": "The specified mnemonic does not accept any inline values"
+    },
+    "GlobalPass": {
+        "UnresolvedExternal": "Could not resolve external reference"
+    },
+    "Validation": {
+        "Instructions": {
+            "InvalidArgument": "Invalid argument(s)",
+            "ArgumentTypeMismatch": "Argument type mismatch",
+            "ArgumentCountMismatch": "Argument count mismatch",
+            "ArgumentSizeMismatch": "Argument size mismatch"
+        },
+        "Blocks": {
+            "BlockFallThrough": "Block does not have a definite closure"
+        },
+        "Directives": {
+            "InvalidDirective": "Invalid directive",
+            "DuplicateDirective": "Duplicate directive parameter name",
+            "DuplicateDirectiveRedeclaresGlobal": "The specified parameter name is already declared by a global directive",
+            "UnclosedSectionDirective": "No matching end directive found for bounded directive",
+            "UnopenedSectionDirective": "No matching start directive found for bounded directive"
+        },
+        "Options": {
+            "InvalidBaseAddressOffset": "The base address offset, if provided, must be a non-negative integer less than 16777216"
+        }
+    },
+    "Common": {
+        "UnexpectedException": "An unexpected exception occurred. This is an assembler error. Please report this message code and the steps to reproduce it to the project maintainers.",
+        "UnexpectedCaseForView": "An unexpected outcome occurred. This is an assembler error. Please report this message code and the steps to reproduce it to the project maintainers.",
+        "UnresolvableDependencies": "One or more dependencies could not be resolved"
+    }
+}

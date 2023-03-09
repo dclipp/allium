@@ -1,0 +1,25 @@
+'VSysIoManager
+
+'Initialization
+Initialize:
+NO_OP
+
+'Cycle
+Cycle:
+NO_OP
+'TODO
+
+'STDIO
+
+'HasData
+'Result -> [MONDAY.hh] = 0 | 1
+STDIOHasData:
+NO_OP
+'TODO
+
+'Read
+'Result ->
+'   [MONDAY] = data length (byte count)
+'   [TUESDAY] = data start address
+STDIORead:
+NO_OP

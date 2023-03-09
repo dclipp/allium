@@ -1,0 +1,394 @@
+{
+    "Stage1": {
+        "NullOrEmptyContent": {
+            "hasCoordinates": false,
+            "code": 2001,
+            "classification": "Fatal"
+        }
+    },
+    "Stage2": {
+        "InvalidMnemonic": {
+            "hasCoordinates": true,
+            "code": 3001,
+            "classification": "Critical"
+        },
+        "UnrecognizedMnemonic": {
+            "hasCoordinates": true,
+            "code": 1,
+            "classification": "Critical",
+            "masterCode": 3001
+        },
+        "BadMnemonicCasing": {
+            "hasCoordinates": true,
+            "code": 2,
+            "classification": "Critical",
+            "masterCode": 3001
+        },
+        "MissingMnemonic": {
+            "hasCoordinates": false,
+            "code": 3,
+            "classification": "Critical",
+            "masterCode": 3001
+        },
+        "InvalidRegisterRef": {
+            "hasCoordinates": true,
+            "code": 3101,
+            "classification": "Critical"
+        },
+        "UnopenedRegisterRef": {
+            "hasCoordinates": true,
+            "code": 1,
+            "classification": "Critical",
+            "masterCode": 3101
+        },
+        "UnterminatedRegisterRef": {
+            "hasCoordinates": true,
+            "code": 2,
+            "classification": "Critical",
+            "masterCode": 3101
+        },
+        "RegisterRefMissingBraces": {
+            "hasCoordinates": true,
+            "code": 3,
+            "classification": "Critical",
+            "masterCode": 3101
+        },
+        "InvalidInlineValue": {
+            "hasCoordinates": true,
+            "code": 3201,
+            "classification": "Critical"
+        },
+        "InlineValueMissingHexPrefix": {
+            "hasCoordinates": true,
+            "code": 3,
+            "classification": "Critical",
+            "masterCode": 3201
+        },
+        "InvalidAutoAddressRef": {
+            "hasCoordinates": true,
+            "code": 3401,
+            "classification": "Critical"
+        },
+        "AutoAddressRefMissingLabel": {
+            "hasCoordinates": true,
+            "code": 1,
+            "classification": "Critical",
+            "masterCode": 3401
+        },
+        "AutoAddressRefMissingExternalTarget": {
+            "hasCoordinates": true,
+            "code": 2,
+            "classification": "Critical",
+            "masterCode": 3401
+        },
+        "InvalidConstantInjector": {
+            "hasCoordinates": true,
+            "code": 3501,
+            "classification": "Critical"
+        },
+        "ConstantInjectorMissingKey": {
+            "hasCoordinates": true,
+            "code": 1,
+            "classification": "Critical",
+            "masterCode": 3501
+        },
+        "ConstantInjectorMissingValue": {
+            "hasCoordinates": true,
+            "code": 2,
+            "classification": "Critical",
+            "masterCode": 3501
+        },
+        "InvalidContent": {
+            "hasCoordinates": true,
+            "code": 3601,
+            "classification": "Critical"
+        },
+        "UnknownArgument": {
+            "hasCoordinates": true,
+            "code": 1,
+            "classification": "Critical",
+            "masterCode": 3601
+        },
+        "Directives": {
+            "InvalidDirective": {
+                "hasCoordinates": true,
+                "code": 3701,
+                "classification": "Critical"
+            }
+        },
+        "Blocks": {
+            "BlockProblem": {
+                "hasCoordinates": true,
+                "code": 3801,
+                "classification": "Critical"
+            },
+            "UnlabeledBlock": {
+                "hasCoordinates": true,
+                "code": 1,
+                "classification": "Critical",
+                "masterCode": 3801
+            }
+        }
+    },
+    "Stage3": {
+        "InvalidRegisterReference": {
+            "hasCoordinates": true,
+            "code": 4001,
+            "classification": "Critical"
+        },
+        "InvalidRegisterName": {
+            "hasCoordinates": true,
+            "code": 1,
+            "classification": "Critical",
+            "masterCode": 4001
+        },
+        "InvalidNamedRegisterMask": {
+            "hasCoordinates": true,
+            "code": 2,
+            "classification": "Critical",
+            "masterCode": 4001
+        },
+        "InvalidNumericRegisterMask": {
+            "hasCoordinates": true,
+            "code": 3,
+            "classification": "Critical",
+            "masterCode": 4001
+        },
+        "InlineValueTooLarge": {
+            "hasCoordinates": true,
+            "code": 4101,
+            "classification": "Critical"
+        },
+        "InvalidConstantInjectionKind": {
+            "hasCoordinates": true,
+            "code": 4201,
+            "classification": "Critical"
+        },
+        "AutoAddressRefOrdinalTooLarge": {
+            "hasCoordinates": true,
+            "code": 4301,
+            "classification": "Critical"
+        },
+        "AliasNotFound": {
+            "hasCoordinates": true,
+            "code": 4401,
+            "classification": "Critical"
+        },
+        "InvalidInjectionValue": {
+            "hasCoordinates": true,
+            "code": 4501,
+            "classification": "Critical"
+        },
+        "FlagInjectionBadCasing": {
+            "hasCoordinates": true,
+            "code": 1,
+            "classification": "Critical",
+            "masterCode": 4501
+        },
+        "VectorInjectionMagnitudeTooLarge": {
+            "hasCoordinates": true,
+            "code": 2,
+            "classification": "Critical",
+            "masterCode": 4501
+        },
+        "InvalidAutoAddressRef": {
+            "hasCoordinates": true,
+            "code": 4601,
+            "classification": "Critical"
+        },
+        "AutoAddressRefInvalidAnchor": {
+            "hasCoordinates": true,
+            "code": 4601,
+            "classification": "Critical",
+            "masterCode": 4601
+        },
+        "AutoAddressRefInvalidExpression": {
+            "hasCoordinates": true,
+            "code": 1,
+            "classification": "Critical",
+            "masterCode": 4601
+        },
+        "AutoAddressRefInvalidParameter": {
+            "hasCoordinates": true,
+            "code": 2,
+            "classification": "Critical",
+            "masterCode": 4601
+        },
+        "AutoAddressRefParameterTooLarge": {
+            "hasCoordinates": true,
+            "code": 3,
+            "classification": "Critical",
+            "masterCode": 4601
+        },
+        "AutoAddressRefInvalidOperator": {
+            "hasCoordinates": true,
+            "code": 4,
+            "classification": "Critical",
+            "masterCode": 4601
+        }
+    },
+    "Stage4": {
+        "InvalidAutoAddressRef": {
+            "hasCoordinates": true,
+            "code": 5001,
+            "classification": "Critical"
+        },
+        "AutoAddressRefLabelNotFound": {
+            "hasCoordinates": true,
+            "code": 1,
+            "classification": "Critical",
+            "masterCode": 5001
+        },
+        "AutoAddressRefTooLargeForInline": {
+            "hasCoordinates": true,
+            "code": 2,
+            "classification": "Critical",
+            "masterCode": 5001
+        },
+        "DirectiveNotFound": {
+            "hasCoordinates": true,
+            "code": 5101,
+            "classification": "Critical"
+        },
+        "ImportError": {
+            "hasCoordinates": true,
+            "code": 5201,
+            "classification": "Critical"
+        },
+        "ExternalObjectNotFound": {
+            "hasCoordinates": true,
+            "code": 1,
+            "classification": "Critical",
+            "masterCode": 5201
+        },
+        "ExternalObjectDoesNotContainLabel": {
+            "hasCoordinates": true,
+            "code": 2,
+            "classification": "Critical",
+            "masterCode": 5201
+        }
+    },
+    "Stage5": {
+        "InlineValueTooLarge": {
+            "hasCoordinates": true,
+            "code": 6001,
+            "classification": "Critical"
+        },
+        "ArgumentsResized": {
+            "hasCoordinates": true,
+            "code": 6002,
+            "classification": "Critical"
+        },
+        "UnresolvedTargetBlockAddress": {
+            "hasCoordinates": true,
+            "code": 6003,
+            "classification": "Critical"
+        },
+        "NotAnInlineValueMnemonic": {
+            "hasCoordinates": true,
+            "code": 6004,
+            "classification": "Critical"
+        }
+    },
+    "GlobalPass": {
+        "UnresolvedExternal": {
+            "hasCoordinates": true,
+            "code": 7001,
+            "classification": "Critical"
+        }
+    },
+    "Validation": {
+        "Instructions": {
+            "InvalidArgument": {
+                "hasCoordinates": true,
+                "code": 8001,
+                "classification": "Critical"
+            },
+            "ArgumentTypeMismatch": {
+                "hasCoordinates": true,
+                "code": 1,
+                "classification": "Critical",
+                "masterCode": 8001
+            },
+            "ArgumentCountMismatch": {
+                "hasCoordinates": true,
+                "code": 2,
+                "classification": "Critical",
+                "masterCode": 8001
+            },
+            "ArgumentSizeMismatch": {
+                "hasCoordinates": true,
+                "code": 3,
+                "classification": "Critical",
+                "masterCode": 8001
+            },
+            "ConditionalJumpValueAlwaysTrue": {
+                "hasCoordinates": true,
+                "code": 8101,
+                "classification": "Warning"
+            }
+        },
+        "Blocks": {
+            "BlockFallThrough": {
+                "hasCoordinates": true,
+                "code": 8501,
+                "classification": "Critical"
+            }
+        },
+        "Directives": {
+            "InvalidDirective": {
+                "hasCoordinates": true,
+                "code": 9001,
+                "classification": "Critical"
+            },
+            "DuplicateDirective": {
+                "hasCoordinates": true,
+                "code": 1,
+                "classification": "Critical",
+                "masterCode": 9001
+            },
+            "DuplicateDirectiveRedeclaresGlobal": {
+                "hasCoordinates": true,
+                "code": 2,
+                "classification": "Critical",
+                "masterCode": 9001
+            },
+            "UnclosedSectionDirective": {
+                "hasCoordinates": true,
+                "code": 3,
+                "classification": "Critical",
+                "masterCode": 9001
+            },
+            "UnopenedSectionDirective": {
+                "hasCoordinates": true,
+                "code": 4,
+                "classification": "Critical",
+                "masterCode": 9001
+            }
+        },
+        "Options": {
+            "InvalidBaseAddressOffset": {
+                "hasCoordinates": false,
+                "code": 9101,
+                "classification": "Critical"
+            }
+        }
+    },
+    "Common": {
+        "UnexpectedException": {
+            "hasCoordinates": false,
+            "code": 1101,
+            "classification": "Fatal"
+        },
+        "UnexpectedCaseForView": {
+            "hasCoordinates": true,
+            "code": 1102,
+            "classification": "Fatal"
+        },
+        "UnresolvableDependencies": {
+            "hasCoordinates": false,
+            "code": 1103,
+            "classification": "Critical"
+        }
+    }
+}
